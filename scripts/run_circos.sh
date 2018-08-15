@@ -2,5 +2,5 @@
 
 #Download all the sequences required
 
-perl get_genbank_batch.pl $1
-perl genbank2fasta.pl sequences.gbk
+get_genbank_batch.pl $1
+genbank2fasta.pl sequences.gbk
