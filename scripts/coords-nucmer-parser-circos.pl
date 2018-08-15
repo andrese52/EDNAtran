@@ -1,4 +1,4 @@
-#! /panfs/panfs.cluster/opt/perl/5.18.1/gcc/bin/perl
+#!/usr/bin/perl -w
 ######coords-nucmer-parser-circos.pl######################
 ###### It parses .coords files and creates .txt files that can be used as input in circos######
 
