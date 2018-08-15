@@ -12,9 +12,10 @@ To start replicating the results of our manuscript first clone the repository as
 git clone https://github.com/andrese52/EDNAtran.git
 cd EDNAtran
 ```
+# Dependencies
 
 
-#Setting up environmental variables
+# Setting up environmental variables
 We need to tell our computer where to find the scripts. Therefore we must run this code once we have cloned the repository:
 
 ```bash
