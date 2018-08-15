@@ -11,7 +11,6 @@ for i in sequences.fasta.files/*.fasta
 do
   echo $i
   nucmer -maxmatch sequences.fasta.files/AY510453.fasta $i -p $i.nucmer
+  delta-filter -q $i.nucmer.delta > $i.filter.delta
+  show-coords $i.filter.delta -T > $i.coords
 done
-
-#delta-filter -q output-name.delta > output-name.filter.delta
-#show-coords output-name.filter.delta -T > output-name.coords
