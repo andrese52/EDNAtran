@@ -21,9 +21,10 @@ my @F = split ' ';
 print "This $F[9] is 9 and percent ID \n";
 print "This $F[18] is 18 and query ID \n";
 print "This $F[17] is 17 and the reference ID \n";
+print "This $F[9] is 9 and the Percent ID \n";
 #my ($ref,$query,$perc_id,$contigid) = @F[1,2,3,8];  # FROM: chrome-extension://gbkeegbaiigmenfmjfclcdgdpimamgkj/views/app.html
 my $query = $F[19];
-my $perc_id = $F[10];
+my $perc_id = $F[9];
 $perc_id=~ s/\s+//g;
 my $contigid = $F[18];
 $contigid=~ s/\s+//g;
