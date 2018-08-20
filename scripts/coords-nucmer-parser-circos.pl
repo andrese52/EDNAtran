@@ -12,26 +12,32 @@ open OUTPUT, ">", "$outfile.txt" or die "cannot open > $outfile: $!";
 open OUTPUT2, ">", "$outfile-highlight.txt" or die "cannot open > $outfile: $!";
 open OUTPUT3, ">", "$outfile-links.txt" or die "cannot open > $outfile: $!";
 while (<FILE>) { 
-next unless /contig/;
-my @F = split(/\t/);
+#chomp;
+next if $. < 6;# https://stackoverflow.com/a/14407167
+#print $_;
+my @F = split ' ';
+#print "@F\n";
+print "This $F[9] is 9 and percent ID \n";
+print "This $F[18] is 18 and query ID \n";
+print "This $F[17] is 17 and the reference ID \n";
 #my ($ref,$query,$perc_id,$contigid) = @F[1,2,3,8];  # FROM: chrome-extension://gbkeegbaiigmenfmjfclcdgdpimamgkj/views/app.html
-my $query = $F[1];
-my $perc_id = $F[6];
+my $query = $F[19];
+my $perc_id = $F[10];
 $perc_id=~ s/\s+//g;
-my $contigid = $F[8];
+my $contigid = $F[18];
 $contigid=~ s/\s+//g;
-my $refID = $F[7];
+my $refID = $F[17];
 $refID =~ s/\s+//g;
 
-my $qstart = $F[2];
-my $qend = $F[3];
+my $qstart = $F[3];
+my $qend = $F[4];
 $qend= $qend-1; #because the tracks start at 0 and not at 1 as alignments, alignment will always start at 1
 
 my $rstart = $F[0];
 my $rend = $F[1];
 $rend= $rend-1;	#because the tracks start at 0 and not at 1 as alignments, alignment will always start at 1
 
-print "sm$contigid $qstart $qend $perc_id\n";
+#print "sm$contigid $qstart $qend $perc_id\n";
 print OUTPUT "sm$contigid $qstart $qend $perc_id\n";
 print OUTPUT2 "sm$contigid $qstart $qend\n";
 print OUTPUT3 "sm$contigid $qstart $qend $refID $rstart $rend\n";
