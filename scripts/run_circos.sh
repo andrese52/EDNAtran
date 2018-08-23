@@ -15,6 +15,6 @@ do
   show-coords $i.filter.delta -qcl > $i.coords
   coords-nucmer-parser-circos.pl $i.coords $i
   makeblastdb -in sequences.fasta.files/$i -dbtype nucl
-  blastn -db sequences.fasta.files/$i -query eprobes/AF70-80.fasta -outfmt 6 -out sequences.fasta.files/$i-vs-AF70-80.out
+  blastn -db $i -query eprobes/AF70-80.fasta -outfmt 6 -out $i-vs-AF70-80.out
 
 done
