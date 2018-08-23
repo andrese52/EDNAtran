@@ -16,5 +16,5 @@ do
   coords-nucmer-parser-circos.pl $i.coords $i
   makeblastdb -in $i -dbtype nucl
   blastn -db $i -query eprobes/AF70-80.fasta -outfmt 6 -out $i-vs-AF70-80.out
-
+  awk '{print $2,$9,$10}' $i-vs-AF70-80.out > $i-PROBE-circos-highlight.txt
 done
