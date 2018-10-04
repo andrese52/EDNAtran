@@ -1,9 +1,9 @@
 Running EDNAtran with *Aspergillus flavus* as a model system.
 ===
 Contents
-[TOC]
 
-This repository contains all the [scripts](/scripts) that allowed to obtain all the [231 e-probes](/results/eprobes/AF70-80.fasta) associated with aflatoxin production in AF70.
+
+This repository contains part of the [scripts](/scripts) that allowed to validate all the [231 e-probes](/results/eprobes/AF70-80.fasta) associated with aflatoxin production in AF70.
 There are multiple steps associated with the design of e-probes. In this case, all the methodology is explained in our manuscript.
 
 To start replicating the results of our manuscript first clone the repository as follows:
